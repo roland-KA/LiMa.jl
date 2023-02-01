@@ -1,0 +1,9 @@
+name = "LiMa"
+uuid = "9bd96290-f2ca-448b-a622-e47d1bdb7218"
+authors = ["Roland Schätzle <80126696+roland-KA@users.noreply.github.com>"]
+version = "0.1.0"
+
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
+StructTypes = "856f2bd8-1eba-4b0a-8007-ebc267875bd4"
