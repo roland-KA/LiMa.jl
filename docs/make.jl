@@ -21,3 +21,6 @@ makedocs(
     authors = "Dr. Roland Schätzle",
     doctest = false
 )
+deploydocs(
+    repo = "github.com/roland-KA/LiMa.jl.git",
+)
