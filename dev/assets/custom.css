@@ -1,0 +1,70 @@
+/* Hauptfenster */
+
+#documenter,
+.content,
+#documenter .docs-main,
+.docs-navbar,											/* Block oben mit Titel und Zahnrad */
+#documenter .docs-sidebar form.docs-search > input,		/* Suchfeld  #fafcfd*/
+html {
+	background-color: #F4FAFE !important;
+}
+
+/* Seitenleiste */
+.docs-sidebar,		
+.navbar {
+	background-color: #4595D1 !important; 
+}
+
+/* Seitenmenü */
+#documenter .docs-sidebar ul.docs-menu .tocitem,
+#documenter .docs-sidebar ul.docs-menu li.is-active,
+#documenter .docs-sidebar ul.docs-menu li.is-active .tocitem {
+	background-color: #8BBDE2 !important;
+}
+
+/* Hover im Seitenmenü */
+#documenter .docs-sidebar ul.docs-menu li.is-active ul.internal .tocitem:hover {
+	background-color: #4595D1 !important; 
+}
+
+/* Text */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "IBM Plex Sans", "Goldman Sans", "Source Sans Pro"
+}
+
+/* Code */
+
+code .hljs-meta {
+	color: #4595D1;
+}
+
+code .hljs-keyword {
+	color: #3C82B7; /* #194E82; */
+}
+
+.content a code {
+	color: #512B83;
+}
+
+pre, code {
+	font-variant-ligatures: contextual !important;
+	background-color: #F4FAFE; /* #E5EBEE; */
+	color: #2B5D83; 
+	font-family: "Fira Code", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+	font-weight: Retina;
+}
+
+/* mkdocs (old) */
+
+/*.navbar-default {
+	background-color: #194E82;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	background-color: #4595D1;
+}*/
