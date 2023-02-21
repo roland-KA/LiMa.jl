@@ -84,7 +84,7 @@ declare_obj_unique(pool::StoragePool, type::DataType) = nothing
 """
     insert!(pool::StoragePool, obj::Any)
 
-Insert an object (created outside) into the storage pool.
+Insert an object (created outside) into the storage pool. 
 """
 function insert!(pool::StoragePool, obj::Any) 
     type = typeof(obj)

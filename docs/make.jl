@@ -10,8 +10,8 @@ makedocs(
     sitename="LiMa - A Library Manager",
     format = Documenter.HTML(
         edit_link = nothing,
-        prettyurls = false,                         # for local use 
-        assets = ["assets/custom.css",]),          # custom fonts & colors
+        prettyurls = get(ENV, "CI", nothing) == "true",     # local/web use 
+        assets = ["assets/custom.css",]),                   # custom fonts & colors
     pages = [
         "Introduction" => "index.md",
         "AppCore" => Any[
