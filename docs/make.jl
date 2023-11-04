@@ -16,7 +16,11 @@ makedocs(
         "Introduction" => "index.md",
         "AppCore" => Any[
             "AppCore Overview" => "AppCore/AppCore.md",
-            "AppCore/UserManager.md"],
+            "AppCore/TitleCatalog.md",
+            "AppCore/Inventory.md",
+            "AppCore/UserManager.md",
+            "AppCore/Circulation.md",
+            "AppCore/Fees.md"],
         "StorageManager" => "StorageManager.md"],
     authors = "Dr. Roland Schätzle",
     doctest = false

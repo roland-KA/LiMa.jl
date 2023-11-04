@@ -3,6 +3,7 @@ A persistent data pool
 """
 module StorageManager
 
+export add_type!, delete_type!, declare_attr_unique, declare_obj_unique
 export insert!, create!, update!, exists, get, delete!, lookup
 export begin_transaction, commit, rollback, set_autocommit
 export StoragePool
@@ -20,11 +21,6 @@ StoragePool() = StoragePool(
                     Dict{DataType, Int64}()
                 )
 
-function add_type(sp::StoragePool, type::DataType) 
-    sp.objects[type] = Dict{Int64, Any}()
-    sp.next_ids[type] = 1
-end 
-
 function add_object!(sp::StoragePool, type::DataType, obj::Any)
   sp.objects[type][obj.id] = obj
   sp.next_ids[type] += 1
@@ -36,7 +32,7 @@ del_object!(sp::StoragePool, type::DataType, id::Int64) = delete!(sp.objects[typ
 get_next_id(sp::StoragePool, type::DataType) = sp.next_ids[type] 
 
 
-#### Administration (public interface)
+#### Schema Administration (public interface)
 
 """
 Management of data types (data schema)
@@ -50,11 +46,14 @@ If a DBMS is used for persistent storage, its database scheme can be inferred fr
 """
 
 """
-    create_type!(pool::StoragePool, type::DataType)
+    add_type!(pool::StoragePool, type::DataType)
 
 Add `type` to the data scheme.
 """
-create_type!(pool::StoragePool, type::DataType) = nothing
+function add_type!(sp::StoragePool, type::DataType) 
+    sp.objects[type] = Dict{Int64, Any}()
+    sp.next_ids[type] = 1
+end 
 
 """
     delete_type!(pool::StoragePool, type::DataType) 
@@ -79,7 +78,7 @@ Each object of type `type` is unique.
 declare_obj_unique(pool::StoragePool, type::DataType) = nothing 
 
 
-#### Usage (public interface)
+#### Pool Usage (public interface)
 
 """
     insert!(pool::StoragePool, obj::Any)
@@ -118,7 +117,7 @@ update!(pool::StoragePool, type::DataType, id::Int64, attrs::Tuple) = nothing
 
 Is there an object of type `type` identified by `id` within the `pool`?
 """
-exists(pool::StoragePool, type::DataType, id::Int64) = has_object(pool, type, id)
+exists(pool::StoragePool, type::DataType, id::Int64)::Bool = has_object(pool, type, id)
 
 """
     get(pool::StoragePool, type::DataType, id::Int64) --> obj

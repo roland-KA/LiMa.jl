@@ -27,9 +27,6 @@ The software in this repo is a work in progress. It focuses currently on the sub
   
   *Note*: In a more realistic scenario, the `StorageManager`wouldn‘t be a sub-package of `LiMa`, but a stand-alone package which would be used by `AppCore`.
 
-
-
-
 ![Comp-AppCore-StorageManager](assets/Comp-AppCore-StorageManager.png)
 
 ## Business Logic in AppCore
@@ -37,14 +34,6 @@ The software in this repo is a work in progress. It focuses currently on the sub
 The application core consists of the following components:
 - `UserManager`
 - `TitleCatalog`
-- `InventoryManager`
-- `CirculationManager`
+- `Inventory`
+- `Circulation`
 - `Fees`
-
-```@docs
-  AppCore.UserManager
-```
-
-```@docs
-  AppCore.TitleCatalog
-```

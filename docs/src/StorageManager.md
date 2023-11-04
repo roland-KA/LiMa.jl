@@ -91,7 +91,7 @@ mutable struct Title
     titleID::String     # unique identifier used by the library
     isbn::String        # not all titles may hav a ISBN
     name::String        # title
-    author::AbstractArray{Author}
+    authors::AbstractArray{Author}
     publisher::String
     pub_date::Date
 end
@@ -117,18 +117,25 @@ LiMa.StorageManager.delete!
 LiMa.StorageManager.lookup
 ```
 
+### Schema Administration
+
+```@docs
+LiMa.StorageManager.add_type!
+LiMa.StorageManager.delete_type!
+LiMa.StorageManager.declare_attr_unique
+LiMa.StorageManager.declare_obj_unique
+```
+
 ### Transaction Management
 
 ```@docs
-begin_transaction
-commit
-rollback
-set_autocommit
+LiMa.StorageManager.begin_transaction
+LiMa.StorageManager.commit
+LiMa.StorageManager.rollback
+LiMa.StorageManager.set_autocommit
 ```
 
 ## Persistence Layer
-
-
 
 ### Object Creation
 
