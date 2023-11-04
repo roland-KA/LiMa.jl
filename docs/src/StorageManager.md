@@ -1,5 +1,9 @@
 # StorageManager
 
+```@docs
+LiMa.StorageManager
+```
+
 ## Overview
 
 The `StorageManager` is an **_object pool_** which stores its objects permanently. 

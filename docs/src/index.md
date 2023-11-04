@@ -6,6 +6,10 @@ which conforms to the concepts presented in:
 
 - Johannes Siedersleben: *Moderne Software-Architektur*, dpunkt.verlag, 2004. 
 
+```@docs
+LiMa
+```
+
 ## Software Categories  
 
 The main idea of this book is, that the components of a software architecture can be categorized into the following classes:
